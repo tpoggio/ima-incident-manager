@@ -8,8 +8,8 @@ describe('Utils', () => {
     });
 
     it('should handle conditional classes', () => {
-        const isIncluded = true;
-        const isExcluded = false;
+      const isIncluded = true;
+      const isExcluded = false;
       const result = cn('base', isIncluded && 'included', isExcluded && 'excluded');
       expect(result).toBe('base included');
     });
@@ -34,7 +34,7 @@ describe('Utils', () => {
     });
 
     it('should handle Date objects', () => {
-      const date = new Date('2024-01-15T10:30:00Z');
+      const date = new Date('2024-01-15T10:30:00Z').toDateString();
       const result = formatDate(date);
       expect(result).toContain('2024');
     });
