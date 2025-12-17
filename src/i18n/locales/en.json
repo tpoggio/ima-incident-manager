@@ -1,0 +1,106 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "all": "All",
+    "logout": "Logout",
+    "user": "User"
+  },
+  "auth": {
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "enterUsername": "Enter your username",
+    "enterPassword": "Enter your password",
+    "welcome": "Welcome",
+    "loginSubtitle": "Incident Management System"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "incidents": "Incidents"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "newIncident": "New Incident",
+    "filterByTitle": "Filter by title"
+  },
+  "incidents": {
+    "title": "Title",
+    "description": "Description",
+    "service": "Service",
+    "channel": "Channel",
+    "status": "Status",
+    "createdAt": "Created At",
+    "installer": "Installer",
+    "client": "Client",
+    "incident": "Incident",
+    "noIncidentsFound": "No incidents found with the selected filters.",
+    "newIncident": "New Incident",
+    "incidentDetail": "Incident Detail",
+    "attachments": "Attachments",
+    "attachmentSent": "Attachment sent",
+    "filesCount": "{{count}} file(s)",
+    "workflowStatus": "Workflow Status",
+    "changeStatus": "Change Status"
+  },
+  "form": {
+    "titleLabel": "Title",
+    "titlePlaceholder": "Incident title",
+    "titleError": "Title must be at least 5 characters",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Detailed description of the incident",
+    "descriptionError": "Description must be at least 10 characters",
+    "serviceLabel": "Service",
+    "servicePlaceholder": "Select service",
+    "serviceError": "Select a service",
+    "channelLabel": "Channel",
+    "channelPlaceholder": "Select channel",
+    "channelError": "Select a channel",
+    "installerLabel": "Installer",
+    "installerPlaceholder": "Installer name",
+    "installerError": "Installer must be at least 2 characters",
+    "clientLabel": "Client",
+    "clientPlaceholder": "Client name",
+    "clientError": "Client must be at least 2 characters"
+  },
+  "services": {
+    "INTERNET": "Internet",
+    "TELEFONIA": "Phone",
+    "MPLS": "MPLS",
+    "OTRO": "Other"
+  },
+  "channels": {
+    "WEB": "Web",
+    "CALL_CENTER": "Call Center",
+    "WHATSAPP": "WhatsApp",
+    "EMAIL": "Email",
+    "COMERCIAL": "Sales"
+  },
+  "statuses": {
+    "NUEVO": "New",
+    "EN_PROGRESO": "In Progress",
+    "EN_CURSO": "In Progress",
+    "EN_ANALISIS": "Under Analysis",
+    "ASIGNADO": "Assigned",
+    "PENDIENTE": "Pending",
+    "ESPERANDO_CLIENTE": "Waiting for Client",
+    "ESPERANDO_PROVEEDOR": "Waiting for Provider",
+    "RESUELTO": "Resolved",
+    "CERRADO": "Closed",
+    "CANCELADO": "Cancelled"
+  },
+  "charts": {
+    "incidentsByChannel": "Incidents by Channel",
+    "incidentsByStatus": "Incidents by Status",
+    "quantity": "Quantity"
+  },
+  "workflow": {
+    "currentState": "Current state",
+    "validTransition": "Valid transition (click to change)"
+  }
+}

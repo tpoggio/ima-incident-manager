@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ima-blue: #1a4b8c;
+  --color-ima-blue-dark: #0f3460;
+  --color-ima-blue-light: #2e6dbd;
+}
+
+body {
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}

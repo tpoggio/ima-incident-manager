@@ -1,0 +1,106 @@
+{
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "all": "Todos",
+    "logout": "Cerrar sesión",
+    "user": "Usuario"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "enterUsername": "Ingrese su usuario",
+    "enterPassword": "Ingrese su contraseña",
+    "welcome": "Bienvenido",
+    "loginSubtitle": "Sistema de Gestión de Incidentes"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "incidents": "Incidentes"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "newIncident": "Nuevo Incidente",
+    "filterByTitle": "Filtrar por título"
+  },
+  "incidents": {
+    "title": "Título",
+    "description": "Descripción",
+    "service": "Servicio",
+    "channel": "Canal",
+    "status": "Estado",
+    "createdAt": "Fecha Creación",
+    "installer": "Instalador",
+    "client": "Cliente",
+    "incident": "Incidente",
+    "noIncidentsFound": "No se encontraron incidentes con los filtros seleccionados.",
+    "newIncident": "Nuevo Incidente",
+    "incidentDetail": "Detalle del Incidente",
+    "attachments": "Adjuntos",
+    "attachmentSent": "Adjunto enviado",
+    "filesCount": "{{count}} archivo(s)",
+    "workflowStatus": "Estado de Workflow",
+    "changeStatus": "Cambiar Estado"
+  },
+  "form": {
+    "titleLabel": "Título",
+    "titlePlaceholder": "Título del incidente",
+    "titleError": "El título debe tener al menos 5 caracteres",
+    "descriptionLabel": "Descripción",
+    "descriptionPlaceholder": "Descripción detallada del incidente",
+    "descriptionError": "La descripción debe tener al menos 10 caracteres",
+    "serviceLabel": "Servicio",
+    "servicePlaceholder": "Seleccione servicio",
+    "serviceError": "Seleccione un servicio",
+    "channelLabel": "Canal",
+    "channelPlaceholder": "Seleccione canal",
+    "channelError": "Seleccione un canal",
+    "installerLabel": "Instalador",
+    "installerPlaceholder": "Nombre del instalador",
+    "installerError": "El instalador debe tener al menos 2 caracteres",
+    "clientLabel": "Cliente",
+    "clientPlaceholder": "Nombre del cliente",
+    "clientError": "El cliente debe tener al menos 2 caracteres"
+  },
+  "services": {
+    "INTERNET": "Internet",
+    "TELEFONIA": "Telefonía",
+    "MPLS": "MPLS",
+    "OTRO": "Otro"
+  },
+  "channels": {
+    "WEB": "Web",
+    "CALL_CENTER": "Call Center",
+    "WHATSAPP": "WhatsApp",
+    "EMAIL": "Email",
+    "COMERCIAL": "Comercial"
+  },
+  "statuses": {
+    "NUEVO": "Nuevo",
+    "EN_PROGRESO": "En Progreso",
+    "EN_CURSO": "En Curso",
+    "EN_ANALISIS": "En Análisis",
+    "ASIGNADO": "Asignado",
+    "PENDIENTE": "Pendiente",
+    "ESPERANDO_CLIENTE": "Esperando Cliente",
+    "ESPERANDO_PROVEEDOR": "Esperando Proveedor",
+    "RESUELTO": "Resuelto",
+    "CERRADO": "Cerrado",
+    "CANCELADO": "Cancelado"
+  },
+  "charts": {
+    "incidentsByChannel": "Incidentes por Canal",
+    "incidentsByStatus": "Incidentes por Estado",
+    "quantity": "Cantidad"
+  },
+  "workflow": {
+    "currentState": "Estado actual",
+    "validTransition": "Transición válida (click para cambiar)"
+  }
+}
