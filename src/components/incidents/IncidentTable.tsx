@@ -5,7 +5,17 @@ import { ESTADO_COLORS } from '@/types';
 import { formatDate, cn } from '@/lib/utils';
 import { useFiltersStore } from '@/store';
 
-const estadoKeys = ['NUEVO', 'EN_PROGRESO', 'PENDIENTE', 'RESUELTO', 'CERRADO'];
+const estadoKeys = [
+  'NUEVO',
+  'EN_ANALISIS',
+  'ASIGNADO',
+  'EN_CURSO',
+  'ESPERANDO_CLIENTE',
+  'ESPERANDO_PROVEEDOR',
+  'RESUELTO',
+  'CERRADO',
+  'CANCELADO',
+];
 const canalKeys = ['WEB', 'CALL_CENTER', 'WHATSAPP', 'EMAIL', 'COMERCIAL'];
 const servicioKeys = ['INTERNET', 'TELEFONIA', 'MPLS', 'OTRO'];
 
