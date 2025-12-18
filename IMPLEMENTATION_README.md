@@ -241,112 +241,25 @@ npm run dev
 # Build para producción
 npm run build
 
-# Preview del build
-npm run preview
+# Deploy to GitHub Pages
+npm run deploy
+
 ```
 
 ### Scripts Disponibles
 
 | Script             | Descripción              |
-| ------------------ | ------------------------ |
+|--------------------| ------------------------ |
 | `npm run dev`      | Servidor de desarrollo   |
 | `npm run build`    | Build de producción      |
+| `npm run deploy`   | Deploy to GitHub Pages   |
 | `npm run preview`  | Preview del build        |
 | `npm run lint`     | Ejecutar ESLint          |
 | `npm run lint:fix` | Fix automático de ESLint |
 | `npm run format`   | Formatear con Prettier   |
 
 ---
-
-## 📁 Decisiones de Diseño
-
-### 1. TanStack Query vs Redux
-
-**Elegido**: TanStack Query
-**Razón**: Maneja el estado del servidor (datos de API) de forma óptima con:
-
-- Cache automático
-- Background refetching
-- Deduplicación de requests
-- Optimistic updates
-- Retry automático
-
-### 2. Zustand vs Context API
-
-**Elegido**: Zustand
-**Razón**:
-
-- API más simple que Redux
-- Persistencia integrada
-- No necesita providers anidados
-- Mejor performance (suscripciones granulares)
-
-### 3. React Hook Form vs Formik
-
-**Elegido**: React Hook Form + Zod
-**Razón**:
-
-- Menos re-renders
-- Validación con schema (Zod)
-- API más moderna y TypeScript-friendly
-
-### 4. Canvas vs Draw2D para el grafo
-
-**Elegido**: Canvas API nativo
-**Razón**:
-
-- Sin dependencias externas pesadas
-- Control total del renderizado
-- Mejor integración con React
-- Más fácil de personalizar
-
----
-
-## 🔄 Flujo de Datos
-
-```
-[Usuario] → [Componente] → [Custom Hook] → [Service] → [API]
-                ↓
-           [TanStack Query Cache]
-                ↓
-           [Re-render con datos]
-```
-
-### Ejemplo: Listar Incidentes
-
-1. `DashboardPage` llama a `useIncidents(filters)`
-2. `useIncidents` usa `useQuery` de TanStack Query
-3. `incidentService.getAll()` hace el request con Axios
-4. Respuesta se cachea automáticamente
-5. Componente recibe `{ data, isLoading, error }`
-
----
-
-## 🎨 Diseño UI/UX
-
-### Paleta de Colores
-
-- **Primary (IMA Blue)**: `#1a4b8c`
-- **Primary Dark**: `#0f3460`
-- **Success**: `#10b981`
-- **Warning**: `#f59e0b`
-- **Danger**: `#ef4444`
-
-### Componentes UI
-
-Todos los componentes UI siguen el patrón:
-
-- Props tipadas con TypeScript
-- Variantes (primary, secondary, danger)
-- Tamaños (sm, md, lg)
-- Estados (loading, disabled)
-- Composición con `cn()` (clsx + tailwind-merge)
-
----
-
-## 📝 Convenciones de Código
-
-### Commits (Conventional Commits)
+## 📝 Commits (Conventional Commits)
 
 ```
 feat: add new feature
@@ -357,14 +270,6 @@ refactor: code restructuring
 test: adding tests
 chore: maintenance
 ```
-
-### Naming Conventions
-
-- **Componentes**: PascalCase (`IncidentTable.tsx`)
-- **Hooks**: camelCase con prefijo `use` (`useIncidents.ts`)
-- **Services**: camelCase con sufijo `.service` (`incident.service.ts`)
-- **Types**: PascalCase (`Incident`, `EstadoIncidente`)
-- **Constants**: SCREAMING_SNAKE_CASE (`ESTADO_LABELS`)
 
 ---
 
@@ -398,8 +303,6 @@ La estructura está preparada para agregar tests con:
 
 La aplicación está lista para deploy en:
 
-- **Vercel**: `vercel deploy`
-- **Netlify**: Conectar repo y auto-deploy
 - **GitHub Pages**: Con configuración de base path
 
 ### Build de Producción
@@ -408,43 +311,7 @@ La aplicación está lista para deploy en:
 npm run build
 # Output en /dist
 ```
+### Deploy a GitHub Pages
 
----
-
-## 🤔 Preguntas Frecuentes para Entrevistador
-
-### ¿Por qué elegiste esta arquitectura?
-
-> La arquitectura sigue el principio de **separación de responsabilidades**: Services para API, Hooks para lógica de negocio, Components para UI. Esto facilita testing, mantenimiento y escalabilidad.
-
-### ¿Cómo manejas el estado?
-
-> Uso un enfoque **dual**: TanStack Query para estado del servidor (datos de API con cache) y Zustand para estado del cliente (filtros, UI). Esto evita la complejidad de Redux mientras mantiene el estado organizado.
-
-### ¿Por qué no usaste Redux?
-
-> Para esta aplicación, Redux sería over-engineering. TanStack Query maneja el 90% del estado (datos de API) de forma más eficiente. Zustand cubre el resto con una API más simple.
-
-### ¿Cómo aseguras la calidad del código?
-
-> ESLint + Prettier + TypeScript strict mode + Husky pre-commit hooks + Conventional Commits. Esto garantiza consistencia y detecta errores temprano.
-
-### ¿Cómo escalarías esta aplicación?
-
-> 1. Feature-based folder structure
-> 2. Code splitting con React.lazy()
-> 3. Internacionalización con react-intl
-> 4. Tests automatizados
-> 5. CI/CD pipeline
-
----
-
-## 👨‍💻 Autor
-
-Desarrollado como prueba técnica para demostrar conocimientos en:
-
-- React moderno (hooks, functional components)
-- TypeScript
-- Arquitectura de aplicaciones frontend
-- Patrones de diseño
-- Best practices y clean code
+```bash
+npm run deploy
