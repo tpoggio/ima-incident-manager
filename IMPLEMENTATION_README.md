@@ -145,11 +145,11 @@ apiClient.interceptors.request.use(config => {
   return config;
 });
 
-// Manejo de 401
+// Manejo de 403
 apiClient.interceptors.response.use(
   response => response,
   error => {
-    if (error.response?.status === 401) {
+    if (error.response?.status === 403) {
       Cookies.remove(TOKEN_KEY);
       window.location.href = '/login';
     }
@@ -249,7 +249,7 @@ npm run deploy
 ### Scripts Disponibles
 
 | Script             | Descripción              |
-|--------------------| ------------------------ |
+| ------------------ | ------------------------ |
 | `npm run dev`      | Servidor de desarrollo   |
 | `npm run build`    | Build de producción      |
 | `npm run deploy`   | Deploy to GitHub Pages   |
@@ -259,6 +259,7 @@ npm run deploy
 | `npm run format`   | Formatear con Prettier   |
 
 ---
+
 ## 📝 Commits (Conventional Commits)
 
 ```
@@ -311,7 +312,9 @@ La aplicación está lista para deploy en:
 npm run build
 # Output en /dist
 ```
+
 ### Deploy a GitHub Pages
 
 ```bash
 npm run deploy
+```
