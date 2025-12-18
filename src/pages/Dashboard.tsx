@@ -15,17 +15,18 @@ export function DashboardPage() {
   const { estado, canal, servicio, searchText } = useFiltersStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { data: incidents, isLoading: incidentsLoading } = useIncidents(
-    estado || canal ? { estado: estado || undefined, canal: canal || undefined } : undefined
-  );
+  const { data: incidents, isLoading: incidentsLoading } = useIncidents();
 
   const filteredIncidents = incidents?.filter(incident => {
     // Filter by title
     if (searchText && !incident.titulo.toLowerCase().includes(searchText.toLowerCase())) {
       return false;
     }
-    // Filter by servicio
-    return !(servicio && incident.servicio !== servicio);
+    return (
+      (!servicio || incident.servicio === servicio) &&
+      (!canal || incident.canal === canal) &&
+      (!estado || incident.estadoActual === estado)
+    );
   });
 
   const { data: stats, isLoading: statsLoading } = useDashboardStats();
