@@ -25,7 +25,7 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   response => response,
   (error: AxiosError) => {
-    if (error.response?.status === 401) {
+    if (error.response?.status === 401 || error.response?.status === 403) {
       Cookies.remove(TOKEN_KEY);
       window.location.href = '/login';
     }

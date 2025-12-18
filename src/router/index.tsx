@@ -1,8 +1,8 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createHashRouter, Navigate } from 'react-router-dom';
 import { MainLayout, ProtectedRoute } from '@/components/layout';
 import { LoginPage, DashboardPage, IncidentDetailPage } from '@/pages';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/login',
     element: <LoginPage />,
@@ -15,10 +15,6 @@ export const router = createBrowserRouter([
         children: [
           {
             path: '/dashboard',
-            element: <DashboardPage />,
-          },
-          {
-            path: '/incidentes',
             element: <DashboardPage />,
           },
           {
