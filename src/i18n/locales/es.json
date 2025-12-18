@@ -18,7 +18,9 @@
     "enterUsername": "Ingrese su usuario",
     "enterPassword": "Ingrese su contraseña",
     "welcome": "Bienvenido",
-    "loginSubtitle": "Sistema de Gestión de Incidentes"
+    "loginSubtitle": "Sistema de Gestión de Incidentes",
+    "validatorError": "Por favor ingrese usuario y contraseña",
+    "invalidCredentials": "Credenciales inválidas. Intente con admin / password123"
   },
   "nav": {
     "dashboard": "Dashboard",

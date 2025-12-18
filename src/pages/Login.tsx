@@ -26,7 +26,7 @@ export function LoginPage() {
     setError('');
 
     if (!username || !password) {
-      setError(i18n.language === 'es' ? 'Por favor ingrese usuario y contraseña' : 'Please enter username and password');
+      setError(t('auth.validatorError'));
       return;
     }
 
@@ -34,7 +34,7 @@ export function LoginPage() {
       await login(username, password);
       navigate(from, { replace: true });
     } catch {
-      setError(i18n.language === 'es' ? 'Credenciales inválidas. Intente con admin / password123' : 'Invalid credentials. Try admin / password123');
+      setError(t('auth.invalidCredentials'));
     }
   };
 
@@ -48,8 +48,12 @@ export function LoginPage() {
           onChange={e => changeLanguage(e.target.value)}
           className="bg-transparent border-none focus:outline-none cursor-pointer text-white/80 hover:text-white"
         >
-          <option value="es" className="text-gray-900">Español</option>
-          <option value="en" className="text-gray-900">English</option>
+          <option value="es" className="text-gray-900">
+            Español
+          </option>
+          <option value="en" className="text-gray-900">
+            English
+          </option>
         </select>
       </div>
 
@@ -80,7 +84,7 @@ export function LoginPage() {
                 value={username}
                 onChange={e => setUsername(e.target.value)}
                 autoComplete="username"
-                style={{ 
+                style={{
                   borderWidth: '1px',
                   borderStyle: 'solid',
                   borderColor: '#c0c0c0',
@@ -89,7 +93,7 @@ export function LoginPage() {
                   height: '40px',
                   padding: '0 12px',
                   outline: 'none',
-                  boxSizing: 'border-box'
+                  boxSizing: 'border-box',
                 }}
               />
             </div>
@@ -105,7 +109,7 @@ export function LoginPage() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 autoComplete="current-password"
-                style={{ 
+                style={{
                   borderWidth: '1px',
                   borderStyle: 'solid',
                   borderColor: '#c0c0c0',
@@ -114,7 +118,7 @@ export function LoginPage() {
                   height: '40px',
                   padding: '0 12px',
                   outline: 'none',
-                  boxSizing: 'border-box'
+                  boxSizing: 'border-box',
                 }}
               />
             </div>
@@ -123,15 +127,15 @@ export function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              style={{ 
-                backgroundColor: '#4db5e8', 
+              style={{
+                backgroundColor: '#4db5e8',
                 borderRadius: '9999px',
                 width: '100%',
                 height: '40px',
                 color: 'white',
                 fontWeight: 500,
                 border: 'none',
-                cursor: 'pointer'
+                cursor: 'pointer',
               }}
             >
               {isLoading ? t('common.loading') : t('auth.login')}

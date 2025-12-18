@@ -18,7 +18,9 @@
     "enterUsername": "Enter your username",
     "enterPassword": "Enter your password",
     "welcome": "Welcome",
-    "loginSubtitle": "Incident Management System"
+    "loginSubtitle": "Incident Management System",
+    "validatorError": "Please enter username and password",
+    "invalidCredentials": "Invalid credentials. Try admin / password123"
   },
   "nav": {
     "dashboard": "Dashboard",
