@@ -29,8 +29,4 @@ export const authService = {
       return null;
     }
   },
-
-  getToken(): string | undefined {
-    return getAuthToken();
-  },
 };

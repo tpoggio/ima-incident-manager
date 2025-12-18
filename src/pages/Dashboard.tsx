@@ -19,7 +19,6 @@ export function DashboardPage() {
     estado || canal ? { estado: estado || undefined, canal: canal || undefined } : undefined
   );
 
-  // Filter incidents by search text (title only) and servicio
   const filteredIncidents = incidents?.filter(incident => {
     // Filter by title
     if (searchText && !incident.titulo.toLowerCase().includes(searchText.toLowerCase())) {
@@ -44,7 +43,6 @@ export function DashboardPage() {
 
   return (
     <div className="space-y-6">
-
       {statsLoading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-xl shadow-md p-6 h-80 flex items-center justify-center">
@@ -73,7 +71,12 @@ export function DashboardPage() {
         <IncidentTable incidents={filteredIncidents || []} isLoading={incidentsLoading} />
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={t('dashboard.newIncident')} size="lg">
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={t('dashboard.newIncident')}
+        size="lg"
+      >
         <IncidentForm
           onSubmit={handleCreateIncident}
           onCancel={() => setIsModalOpen(false)}

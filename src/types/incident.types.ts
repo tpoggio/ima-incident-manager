@@ -69,33 +69,6 @@ export const ESTADO_TRANSITIONS: Record<EstadoIncidente, EstadoIncidente[]> = {
   CANCELADO: [],
 };
 
-export const ESTADO_LABELS: Record<EstadoIncidente, string> = {
-  NUEVO: 'Nuevo',
-  EN_ANALISIS: 'En Análisis',
-  ASIGNADO: 'Asignado',
-  EN_CURSO: 'En Curso',
-  ESPERANDO_CLIENTE: 'Esperando Cliente',
-  ESPERANDO_PROVEEDOR: 'Esperando Proveedor',
-  RESUELTO: 'Resuelto',
-  CERRADO: 'Cerrado',
-  CANCELADO: 'Cancelado',
-};
-
-export const CANAL_LABELS: Record<CanalIncidente, string> = {
-  WEB: 'Web',
-  CALL_CENTER: 'Call Center',
-  WHATSAPP: 'WhatsApp',
-  EMAIL: 'Email',
-  COMERCIAL: 'Comercial',
-};
-
-export const SERVICIO_LABELS: Record<ServicioIncidente, string> = {
-  INTERNET: 'Internet',
-  TELEFONIA: 'Telefonía',
-  MPLS: 'MPLS',
-  OTRO: 'Otro',
-};
-
 export const ESTADO_COLORS: Record<EstadoIncidente, string> = {
   NUEVO: 'bg-blue-100 text-blue-800',
   EN_ANALISIS: 'bg-yellow-100 text-yellow-800',

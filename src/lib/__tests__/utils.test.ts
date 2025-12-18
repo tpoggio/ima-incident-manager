@@ -1,4 +1,4 @@
-import { cn, formatDate, formatShortDate } from '../utils';
+import { cn, formatDate } from '../utils';
 
 describe('Utils', () => {
   describe('cn (classNames)', () => {
@@ -36,14 +36,6 @@ describe('Utils', () => {
     it('should handle Date objects', () => {
       const date = new Date('2024-01-15T10:30:00Z').toDateString();
       const result = formatDate(date);
-      expect(result).toContain('2024');
-    });
-  });
-
-  describe('formatShortDate', () => {
-    it('should format date without time', () => {
-      const date = '2024-01-15T10:30:00Z';
-      const result = formatShortDate(date);
       expect(result).toContain('2024');
     });
   });

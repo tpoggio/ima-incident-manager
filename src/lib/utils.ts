@@ -15,12 +15,3 @@ export function formatDate(dateString: string): string {
     minute: '2-digit',
   }).format(date);
 }
-
-export function formatShortDate(dateString: string): string {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat('es-ES', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(date);
-}

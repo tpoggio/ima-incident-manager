@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import tailwindcss from '@tailwindcss/vite';
 
-export default defineConfig({
-  base: '/ima-incident-manager/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/ima-incident-manager/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -24,4 +24,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

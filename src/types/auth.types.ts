@@ -17,10 +17,3 @@ export interface LoginResponse {
   expiresIn: string;
   expiresAt: string;
 }
-
-export interface AuthState {
-  user: User | null;
-  token: string | null;
-  isAuthenticated: boolean;
-  isLoading: boolean;
-}
