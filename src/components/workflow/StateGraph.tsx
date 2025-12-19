@@ -12,6 +12,8 @@ interface NodePosition {
   y: number;
 }
 
+const VERTICAL_GAP = 50;
+
 const NODE_POSITIONS: Record<EstadoIncidente, NodePosition> = {
   NUEVO: { x: 60, y: 120 },
   EN_ANALISIS: { x: 190, y: 120 },
@@ -33,15 +35,16 @@ function getConnectionPoints(
 ): { x1: number; y1: number; x2: number; y2: number } {
   const fromPos = NODE_POSITIONS[from];
   const toPos = NODE_POSITIONS[to];
-  
+
   const dx = toPos.x - fromPos.x;
   const dy = toPos.y - fromPos.y;
-  
+
   let x1: number, y1: number, x2: number, y2: number;
-  
-  if (Math.abs(dy) > 50) {
+
+  if (Math.abs(dy) > VERTICAL_GAP) {
     // Vertical connection
     if (dy > 0) {
+      // To container is below from container
       x1 = fromPos.x + NODE_WIDTH / 2;
       y1 = fromPos.y + NODE_HEIGHT;
       x2 = toPos.x + NODE_WIDTH / 2;
@@ -55,6 +58,7 @@ function getConnectionPoints(
   } else {
     // Horizontal connection
     if (dx > 0) {
+      // To container is to the right of from container
       x1 = fromPos.x + NODE_WIDTH;
       y1 = fromPos.y + NODE_HEIGHT / 2;
       x2 = toPos.x;
@@ -66,7 +70,7 @@ function getConnectionPoints(
       y2 = toPos.y + NODE_HEIGHT / 2;
     }
   }
-  
+
   return { x1, y1, x2, y2 };
 }
 
@@ -96,7 +100,7 @@ export function StateGraph({ currentState, onStateClick }: StateGraphProps) {
               <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
             </marker>
           </defs>
-          
+
           {/* Connections */}
           {connections.map(({ from, to }, idx) => {
             const { x1, y1, x2, y2 } = getConnectionPoints(from, to);
@@ -113,13 +117,15 @@ export function StateGraph({ currentState, onStateClick }: StateGraphProps) {
               />
             );
           })}
-          
+
           {/* Nodes */}
           {Object.entries(NODE_POSITIONS).map(([state, pos]) => {
             const isCurrent = state === currentState;
-            const isValidTransition = ESTADO_TRANSITIONS[currentState]?.includes(state as EstadoIncidente);
+            const isValidTransition = ESTADO_TRANSITIONS[currentState]?.includes(
+              state as EstadoIncidente
+            );
             const isClickable = isValidTransition && onStateClick;
-            
+
             return (
               <g
                 key={state}
