@@ -197,26 +197,16 @@ RESUELTO → CERRADO
 
 ### Implementación del Grafo
 
-El grafo se implementa usando **Canvas API** nativo de HTML5:
+El grafo se implementa usando SVG nativo debido a problemas para integrar la librería Draw2D en el entorno Vite + React.:
 
 ```typescript
 // components/workflow/StateGraph.tsx
-- Renderizado con Canvas 2D
 - Nodos posicionados estratégicamente
 - Flechas direccionales entre estados
 - Estado actual resaltado en azul
 - Transiciones válidas en verde (clickeables)
 - Click en nodo verde = cambio de estado
 ```
-
-**Por qué Canvas en lugar de Draw2D**:
-
-- Zero dependencies adicionales
-- Control total sobre el renderizado
-- Mejor performance
-- Más fácil de mantener
-
----
 
 ## 🚀 Instrucciones de Instalación
 
